@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Author Website</title>
+
+    <style>
+
+        /* =====================================
+           GENERAL
+        ===================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            background-color: #14213D;
+            color: #222222;
+        }
+
+        .page {
+            min-height: 100vh;
+            padding: 50px 25px;
+            text-align: center;
+        }
+
+
+        /* =====================================
+           HEADINGS
+        ===================================== */
+
+        h1 {
+            color: #F5F5F5;
+            font-size: 50px;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            color: #F5F5F5;
+            font-size: 40px;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+
+        /* =====================================
+           BUTTONS
+        ===================================== */
+
+        button {
+            font-family: Georgia, "Times New Roman", serif;
+            cursor: pointer;
+        }
+
+        .genre-button {
+            background-color: #A8B5A2;
+
+            border: none;
+            border-radius: 12px;
+
+            padding: 30px 20px;
+
+            font-size: 22px;
+            font-weight: bold;
+
+            color: #14213D;
+
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+
+            transition: 0.2s;
+        }
+
+        .genre-button:hover {
+            background-color: #BCC8B7;
+            transform: translateY(-4px);
+        }
+
+
+        .small-button {
+            background-color: #A8B5A2;
+
+            border: none;
+            border-radius: 10px;
+
+            padding: 13px 25px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            color: #14213D;
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+            transition: 0.2s;
+        }
+
+        .small-button:hover {
+            background-color: #BCC8B7;
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================
+           HOMEPAGE
+        ===================================== */
+
+        .genre-grid {
+            max-width: 800px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+        }
+
+        .free-stuff {
+            margin-top: 50px;
+        }
+
+
+        /* =====================================
+           BOOK GRID
+        ===================================== */
+
+        .book-grid {
+            max-width: 900px;
+
+            margin: 0 auto 40px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 30px;
+        }
+
+
+        /* =====================================
+           BOOK CARDS
+        ===================================== */
+
+        .book-card {
+            background-color: #718096;
+
+            color: #F5F5F5;
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            min-height: 280px;
+
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .book-card:hover {
+            background-color: #8191A8;
+
+            transform: translateY(-5px);
+        }
+
+
+        /* =====================================
+           BOOK COVERS
+        ===================================== */
+
+        .book-cover {
+            width: 130px;
+            height: 175px;
+
+            margin: 0 auto 20px;
+
+            background-color: #293B5F;
+
+            color: #F5F5F5;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 5px;
+
+            font-weight: bold;
+        }
+
+
+        .book-card h3 {
+            margin: 10px 0;
+
+            font-size: 22px;
+        }
+
+
+        /* =====================================
+           BOOK DETAIL PAGE
+        ===================================== */
+
+        .book-detail {
+            max-width: 650px;
+
+            margin: 0 auto;
+
+            background-color: #E8E9E7;
+
+            padding: 35px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .large-cover {
+            width: 200px;
+            height: 280px;
+
+            margin: 0 auto 25px;
+
+            background-color: #293B5F;
+
+            color: #F5F5F5;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+        }
+
+
+        .book-detail p {
+            font-size: 18px;
+
+            line-height: 1.6;
+        }
+
+
+        .back-buttons {
+            margin-top: 30px;
+        }
+
+
+        .back-buttons button {
+            margin: 5px;
+        }
+
+
+        /* =====================================
+           HIDDEN PAGES
+        ===================================== */
+
+        .hidden {
+            display: none;
+        }
+
+
+        /* =====================================
+           MOBILE
+        ===================================== */
+
+        @media (max-width: 650px) {
+
+            h1 {
+                font-size: 38px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .genre-grid,
+            .book-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .genre-button {
+
+                padding: 25px 15px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <!-- =====================================
+         HOMEPAGE
+    ===================================== -->
+
+    <section id="home">
+
+        <h1>AUTHOR NAME</h1>
+
+
+        <div class="genre-grid">
+
+
+            <!-- HORROR -->
+
+            <button
+                class="genre-button"
+                onclick="showPage('horror')">
+
+                HORROR
+
+            </button>
+
+
+            <!-- SCIENCE FICTION -->
+
+            <button
+                class="genre-button"
+                onclick="showPage('scifi')">
+
+                SCIENCE FICTION
+
+            </button>
+
+
+            <!-- FANTASY -->
+
+            <button
+                class="genre-button"
+                onclick="showPage('fantasy')">
+
+                FANTASY
+
+            </button>
+
+
+            <!-- FUTURE WORK -->
+
+            <button
+                class="genre-button"
+                onclick="showPage('future')">
+
+                FUTURE WORK
+
+            </button>
+
+
+        </div>
+
+
+        <!-- FREE STUFF -->
+
+        <div class="free-stuff">
+
+            <button
+                class="small-button"
+                onclick="showPage('free')">
+
+                FREE STUFF
+
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         HORROR PAGE
+    ===================================== -->
+
+    <section id="horror" class="hidden">
+
+        <h2>HORROR</h2>
+
+
+        <div class="book-grid">
+
+
+            <!-- HORROR BOOK 1 -->
+
+            <div
+                class="book-card"
+                onclick="openBook('Horror Book 1')">
+
+                <div class="book-cover">
+
+                    BOOK COVER
+
+                </div>
+
+                <h3>
+
+                    Horror Book 1
+
+                </h3>
+
+            </div>
+
+
+
+            <!-- HORROR BOOK 2 -->
+
+            <div
+                class="book-card"
+                onclick="openBook('Horror Book 2')">
+
+                <div class="book-cover">
+
+                    BOOK COVER
+
+                </div>
+
+                <h3>
+
+                    Horror Book 2
+
+                </h3>
+
+            </div>
+
+
+
+            <!-- HORROR BOOK 3 -->
+
+            <div
+                class="book-card"
+                onclick="openBook('Horror Book 3')">
+
+                <div class="book-cover">
+
+                    BOOK COVER
+
+                </div>
+
+                <h3>
+
+                    Horror Book 3
+
+                </h3>
+
+            </div>
+
+
+
+            <!-- HORROR BOOK 4 -->
+
+            <div
+                class="book-card"
+                onclick="openBook('Horror Book 4')">
+
+                <div class="book-cover">
+
+                    BOOK COVER
+
+                </div>
+
+                <h3>
+
+                    Horror Book 4
+
+                </h3>
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            class="small-button"
+            onclick="showPage('home')">
+
+            BACK HOME
+
+        </button>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         SCIENCE FICTION PAGE
+    ===================================== -->
+
+    <section id="scifi" class="hidden">
+
+        <h2>SCIENCE FICTION</h2>
+
+
+        <div class="book-grid">
+
+
+            <!-- SCI-FI BOOK 1 -->
+
+            <div
+                class="book-card"
+                onclick="openBook('Science Fiction Book 1')">
+
+                <div class="book-cover">
+
+                    BOOK COVER
+
+                </div>
+
+                <h3>
+
+                    Science Fiction Book 1
+
+                </h3>
+
+            </div>
+
+
+
+            <!-- SCI-FI BOOK 2 -->
+
+            <div
+                class="book-card"
+                onclick="openBook('Science Fiction Book 2')">
+
+                <div class="book-cover">
+
+                    BOOK COVER
+
+                </div>
+
+                <h3>
+
+                    Science Fiction Book 2
+
+                </h3>
+
+            </div>
+
+
+
+            <!-- SCI-FI BOOK 3 -->
+
+            <div
+                class="book-card"
+                onclick="openBook('Science Fiction Book 3')">
+
+                <div class="book-cover">
+
+                    BOOK COVER
+
+                </div>
+
+                <h3>
+
+                    Science Fiction Book 3
+
+                </h3>
+
+            </div>
+
+
+
+            <!-- SCI-FI BOOK 4 -->
+
+            <div
+                class="book-card"
+                onclick="openBook('Science Fiction Book 4')">
+
+                <div class="book-cover">
+
+                    BOOK COVER
+
+                </div>
+
+                <h3>
+
+                    Science Fiction Book 4
+
+                </h3>
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            class="small-button"
+            onclick="showPage('home')">
+
+            BACK HOME
+
+        </button>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         FANTASY
+    ===================================== -->
+
+    <section id="fantasy" class="hidden">
+
+        <h2>FANTASY</h2>
+
+
+        <div class="book-detail">
+
+            <p>
+
+                Your Fantasy books can be added here.
+
+            </p>
+
+        </div>
+
+
+        <div class="back-buttons">
+
+            <button
+                class="small-button"
+                onclick="showPage('home')">
+
+                BACK HOME
+
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         FUTURE WORK
+    ===================================== -->
+
+    <section id="future" class="hidden">
+
+        <h2>FUTURE WORK</h2>
+
+
+        <div class="book-detail">
+
+            <p>
+
+                Future projects can be added here.
+
+            </p>
+
+        </div>
+
+
+        <div class="back-buttons">
+
+            <button
+                class="small-button"
+                onclick="showPage('home')">
+
+                BACK HOME
+
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         FREE STUFF
+    ===================================== -->
+
+    <section id="free" class="hidden">
+
+        <h2>FREE STUFF</h2>
+
+
+        <div class="book-detail">
+
+            <p>
+
+                Add your free stories, samples,
+                downloads, wallpapers, or other
+                free material here.
+
+            </p>
+
+        </div>
+
+
+        <div class="back-buttons">
+
+            <button
+                class="small-button"
+                onclick="showPage('home')">
+
+                BACK HOME
+
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         INDIVIDUAL BOOK PAGE
+    ===================================== -->
+
+    <section id="book" class="hidden">
+
+        <h2 id="bookTitle">
+
+            BOOK TITLE
+
+        </h2>
+
+
+        <div class="book-detail">
+
+
+            <div class="large-cover">
+
+                BOOK COVER
+
+            </div>
+
+
+            <p>
+
+                This is where you can put
+                the description of your book.
+
+            </p>
+
+
+            <p>
+
+                You can also add information
+                about where readers can buy
+                or read the book.
+
+            </p>
+
+
+            <button
+                class="small-button">
+
+                READ / BUY
+
+            </button>
+
+
+        </div>
+
+
+        <div class="back-buttons">
+
+
+            <button
+                class="small-button"
+                onclick="showPage('home')">
+
+                BACK HOME
+
+            </button>
+
+
+            <button
+                class="small-button"
+                onclick="goBack()">
+
+                BACK TO BOOKS
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+</div>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+    let previousPage = "home";
+
+
+    /* Show a page */
+
+    function showPage(pageID) {
+
+        const pages =
+            document.querySelectorAll("section");
+
+
+        pages.forEach(function(page) {
+
+            page.classList.add("hidden");
+
+        });
+
+
+        document
+            .getElementById(pageID)
+            .classList.remove("hidden");
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+
+    /* Open a book */
+
+    function openBook(bookName) {
+
+        const currentVisiblePage =
+            document.querySelector(
+                "section:not(.hidden)"
+            );
+
+
+        previousPage =
+            currentVisiblePage.id;
+
+
+        document
+            .getElementById("bookTitle")
+            .textContent = bookName;
+
+
+        showPage("book");
+
+    }
+
+
+
+    /* Return to the genre */
+
+    function goBack() {
+
+        showPage(previousPage);
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

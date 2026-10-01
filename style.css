@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #14213D;
+    color: #222;
+}
+
+.page {
+    min-height: 100vh;
+    padding: 50px 25px;
+    text-align: center;
+}
+
+h1,
+h2 {
+    color: #F5F5F5;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.genre-grid,
+.book-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.genre-button,
+.small-button {
+    font-family: inherit;
+    cursor: pointer;
+    background: #A8B5A2;
+    border: 0;
+    color: #14213D;
+    font-weight: bold;
+    box-shadow: 0 5px 12px #0005;
+    transition: 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.genre-button {
+    border-radius: 12px;
+    padding: 30px 20px;
+    font-size: 22px;
+}
+
+.small-button {
+    border-radius: 10px;
+    padding: 13px 25px;
+    font-size: 16px;
+}
+
+.genre-button:hover,
+.small-button:hover {
+    background: #BCC8B7;
+    transform: translateY(-3px);
+}
+
+.free-stuff {
+    margin-top: 50px;
+}
+
+.book-grid {
+    margin-bottom: 40px;
+    gap: 30px;
+}
+
+.book-card {
+    background: #718096;
+    color: #F5F5F5;
+    border-radius: 15px;
+    padding: 25px;
+    min-height: 280px;
+    box-shadow: 0 6px 12px #0005;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none;
+    display: block;
+}
+
+.book-card:hover {
+    background: #8191A8;
+    transform: translateY(-5px);
+}
+
+.book-cover {
+    width: 130px;
+    height: 175px;
+    margin: 0 auto 20px;
+    background: #293B5F;
+    color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.book-card h3 {
+    margin: 10px 0;
+    font-size: 22px;
+}
+
+.book-detail {
+    max-width: 650px;
+    margin: 0 auto;
+    background: #E8E9E7;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px #0005;
+}
+
+.large-cover {
+    width: 200px;
+    height: 280px;
+    margin: 0 auto 25px;
+    background: #293B5F;
+    color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.book-detail p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+@media (max-width: 650px) {
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .genre-grid,
+    .book-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .genre-button {
+        padding: 25px 15px;
+    }
+}
